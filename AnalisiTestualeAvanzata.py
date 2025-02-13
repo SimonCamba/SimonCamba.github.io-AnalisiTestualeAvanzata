@@ -15,7 +15,10 @@ with open("Game of Thrones.txt","r",encoding="utf-8") as f:
             conteggio_capitoli[capitolo] = 1
     print(conteggio_capitoli)
 
-with open('Jon_Snow_lines.txt', 'w') as file:
-    for i, riga in enumerate(righeEffettive):
-        if 'Jon Snow' in riga:
-            file.write(f"{i + 1} \"{riga}\"\n")
+def TrovaPersonaggio(nome):
+    with open( nome +' lines.txt', 'w') as file:
+        for i, riga in enumerate(righeEffettive):
+            if nome in riga:
+                file.write(f"{i + 1} \"{riga}\"\n")
+
+TrovaPersonaggio('Jon Snow')
